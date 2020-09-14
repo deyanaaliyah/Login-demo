@@ -1,0 +1,70 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+
+    background: rgb(101, 179, 218);
+    background: linear-gradient(
+            90deg,
+            rgba(101, 179, 218, 1) 18%,
+            rgba(127, 201, 238, 1) 84%
+    );
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    color: white;
+}
+#welcome {
+    font-weight: 900;
+}
+input {
+    width: 160px;
+}
+.form-group {
+    width: 33.333%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+}
+::placeholder {
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 0.07em;
+}
+.form-control {
+    border-radius: 7px;
+    height: 30px;
+    border: 2px solid rgb(238, 248, 255);
+}
+.container {
+    background: none;
+    box-shadow: 0 6.7px 54.3px rgba(0, 0, 0, 0.044), 0 0 71.9px rgba(174, 235, 255, 0.66), 0 10px 70px rgba(223, 247, 255, 0.62);
+    border-radius: 10px;
+    border: 5px solid #fff;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    height: 80%;
+    min-height: 350px;
+}
+.btn {
+    box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.044),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.066), 0 100px 80px rgba(0, 0, 0, 0.11);
+    background: none;
+    color: #fff;
+    height: 40px;
+    width: 167px;
+    border-radius: 7px;
+    border: 2px solid #fff;
+    font-weight: 600;
+    font-size: large;
+}
+.btn:hover {
+    background-color: #fff;
+    transition: 0.2s ease;
+    color: deepskyblue;
+}
