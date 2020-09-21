@@ -2,7 +2,6 @@ package kea.da.controller;
 
 import kea.da.model.Member;
 import kea.da.repository.IMember;
-import kea.da.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +23,8 @@ public class MemberController {
 
     @GetMapping("/")
     public String index(HttpSession session){
-
         if(session.getAttribute("isLoggedIn") != null) {
-            return "html/secret";
+            return "/html/main";
         }
 
         return "index";
@@ -35,13 +33,14 @@ public class MemberController {
     @PostMapping("/")
     public String login(@ModelAttribute Member member, Model model, HttpSession session){
         //check credentials is from the arraylist
-        Member memberToLogIn = memberRepository.read(member.getEmail());
+        Member memberEmailToLogIn = memberRepository.read(member.getEmail());
+        //Member memberPwdToLogIn = memberRepository.read(member.getPassword());
 
-        if(memberToLogIn != null){
+        if(memberEmailToLogIn != null){
             session.setAttribute("isLoggedIn", "yes");
             model.addAttribute("members",memberRepository.readAll());
 
-            return "/html/secret";
+            return "/html/main";
         }
         return "index";
     }
@@ -51,7 +50,7 @@ public class MemberController {
         session.removeAttribute("isLoggedIn");
 
         if(session.getAttribute("isLoggedIn") != null){
-            return "secret";
+            return "/html/main";
         }
 
         return "index";

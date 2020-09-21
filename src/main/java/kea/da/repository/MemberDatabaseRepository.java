@@ -26,7 +26,7 @@ public class MemberDatabaseRepository implements IMember{
     @Override
     public Member read(String email) {
         // create a MySQL query and execute
-        String sql = "SELECT * FROM loginDemo.members WHERE members.email = " + email;
+        String sql = "SELECT * FROM members WHERE members.email = '" + email + "'";
         sqlRowSet = jdbcTemplate.queryForRowSet(sql);
 
         while(sqlRowSet.next()){
@@ -41,7 +41,7 @@ public class MemberDatabaseRepository implements IMember{
         List<Member> members = new ArrayList<>();
 
         // create a MySQL query and execute
-        String sql = "SELECT * FROM loginDemo.members";
+        String sql = "SELECT * FROM members";
         sqlRowSet = jdbcTemplate.queryForRowSet(sql);
 
         while(sqlRowSet.next()){

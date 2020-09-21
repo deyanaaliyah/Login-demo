@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>login demo</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="containers">
+    <p style="font-size: small; font-weight: 900; color: whitesmoke;">&nbsp status: logged in</p>
+    <br>
+    <br>
+    <div>
+        <h1 id="hello">hello!</h1>
+        <!-- table of accounts -->
+        <table class="table-group">
+            <tr id="table-header"> <!-- static · this means it's always there eventhough database is empty -->
+                <h5 id="under-header">accounts saved in database</h5>
+                <br>
+                <td>name</td>
+                <td>e-mail</td>
+                <td style="width: 161px;">password</td>
+                <td>show/hide</td>
+            </tr>
+            <tr th:each="member : ${members}"> <!-- iterates database to get accounts -->
+                <td id="table-content" th:text="${member.name}"></td>
+                <td id="table-email" th:text="${member.email}"></td>
+                <td id="show-pwd" th:text="${member.password}"></td>
+                <td>
+                    <label for="show-toggle">
+                        <input id="show-toggle" type="checkbox" >
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<div style="margin-right: auto; margin-left: auto;width: 13.333%;">
+    <a href="/logout">
+        <button class="btn">log out</button>
+    </a>
+</div>
+
+</body>
+</html>
