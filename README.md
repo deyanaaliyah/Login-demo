@@ -1,6 +1,6 @@
 <div>
   <h2>Login demo<h2>
-    <p>A demo of a MVC login-system written in Java with a MySQL database connection.
+    <small>A demo of a MVC login-system written in Java with a MySQL database connection.
     <br><br>
     MySQL:
     <br>
@@ -19,5 +19,5 @@
     Web:
     <br>
     Everything is pure CSS and HTML
-    </p>
+    </small>
 </div>
